@@ -14,16 +14,32 @@ var androidTarget: String = ""
 
 kotlin {
     val ktorVersion = "2.3.7"
+    // Name of the module to be imported in the consumer project
+    val xcframeworkName = "Shared"
+    val xcf = XCFramework(xcframeworkName)
     androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
+
             }
         }
     }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
+
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64(),
+    ).forEach {
+        it.binaries.framework {
+            baseName = xcframeworkName
+
+            // Specify CFBundleIdentifier to uniquely identify the framework
+            binaryOption("bundleId", "org.example.${xcframeworkName}")
+            xcf.add(this)
+            isStatic = true
+        }
+    }
 
 //    multiplatformSwiftPackage {
 //        packageName("sharedBevanKmm")
@@ -98,26 +114,6 @@ kotlin {
         publishDir = rootProject.file("./")
     }
 
-//    cocoapods {
-//        val iosDefinitions = commonlibs.versions.ios
-//        name = iosDefinitions.basename.get()
-//        summary = iosDefinitions.summary.get()
-//        homepage = iosDefinitions.homepage.get()
-//        authors = iosDefinitions.authors.get()
-//        version = commonlibs.versions.library.version.get()
-//        ios.deploymentTarget = iosDefinitions.deployment.target.get()
-//        framework {
-//            baseName = iosDefinitions.basename.get()
-//            isStatic = false
-//            transitiveExport = true
-//            embedBitcode(BITCODE)
-//        }
-//        specRepos {
-//            url("https://github.com/user/repo.git") //use your repo here
-//        }
-//        publishDir = rootProject.file("./")
-//    }
-    
     sourceSets {
         commonMain.dependencies {
             implementation("io.ktor:ktor-client-core:$ktorVersion")
