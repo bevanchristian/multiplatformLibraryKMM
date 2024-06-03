@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
     spec.name                     = 'sharedBevanLib2'
     spec.version                  = '1.1'
     spec.homepage                 = 'Link to the Shared Module homepage'
-    spec.source                   = { :git=> 'https://github.com/bevanchristian/multiplatformLibraryKMM.git'}
+    spec.source                   = {:git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}"}
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
