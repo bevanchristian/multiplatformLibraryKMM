@@ -5,9 +5,8 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
-    alias(libs.plugins.androidLibrary )
-//    id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
-//    alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization") version "1.9.23"
 }
 
 var androidTarget: String = ""
@@ -41,13 +40,6 @@ kotlin {
         }
     }
 
-//    multiplatformSwiftPackage {
-//        packageName("sharedBevanKmm")
-//        swiftToolsVersion("5.3")
-//        targetPlatforms {
-//            iOS { v("13") }
-//        }
-//    }
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"

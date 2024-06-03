@@ -13,3 +13,4 @@ data class RocketLaunch (
     @SerialName("success")
     val launchSuccess: Boolean?,
 )
+

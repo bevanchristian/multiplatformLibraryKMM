@@ -55,6 +55,10 @@ class RocketComponent {
         return rockets
     }
 
+    fun printBevan(): String {
+        return "jancokkk"
+    }
+
     fun getRockeTFlow() : KmmFlow<List<RocketLaunch>> =  flow {
         val rockets: List<RocketLaunch> = httpClient.get("https://api.spacexdata.com/v4/launches").body()
         emit(rockets)
