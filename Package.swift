@@ -16,7 +16,7 @@ let package = Package(
         .binaryTarget(
             name: "Shared",
             url: "https://github.com/bevanchristian/multiplatformLibraryKMM/raw/main/Shared.xcframework.zip",
-            checksum:"296d4aadd74b96b2bbdbf761cdedde4a4e2ffaacb32246eedb3ee71589342cd1"
+            checksum:"e3f08384ca91e7e61c7b5e142be380c3000b1d3fe930009c69d9b88630fa3fc3"
             )
 
     ]
