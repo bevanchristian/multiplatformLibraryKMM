@@ -15,9 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "sharedBevanKmm",
-            url: "https://github.com/bevanchristian/multiplatformLibraryKMM",
+            url: "https://github.com/bevanchristian/store1/blob/main/Shared.xcframework.zip",
             checksum:"296d4aadd74b96b2bbdbf761cdedde4a4e2ffaacb32246eedb3ee71589342cd1"
             )
-        ),
     ]
 )
