@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'shared'
+    spec.name                     = 'sharedBevanLib2'
     spec.version                  = '1.1'
     spec.homepage                 = 'Link to the Shared Module homepage'
     spec.source                   = { :git=> 'https://github.com/bevanchristian/multiplatformLibraryKMM.git'}
