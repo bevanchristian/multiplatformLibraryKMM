@@ -1,15 +1,26 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'sharedBevanLib2'
+    spec.name                     = 'shared'
     spec.version                  = '1.1'
     spec.homepage                 = 'Link to the Shared Module homepage'
-    spec.source                   = {:git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}"}
+    spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
     spec.vendored_frameworks      = 'build/cocoapods/framework/sharedBevanLib2.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '13.0'
+                
+                
+    if !Dir.exist?('build/cocoapods/framework/sharedBevanLib2.framework') || Dir.empty?('build/cocoapods/framework/sharedBevanLib2.framework')
+        raise "
 
+        Kotlin framework 'sharedBevanLib2' doesn't exist yet, so a proper Xcode project can't be generated.
+        'pod install' should be executed after running ':generateDummyFramework' Gradle task:
+
+            ./gradlew :shared:generateDummyFramework
+
+        Alternatively, proper pod installation is performed during Gradle sync in the IDE (if Podfile location is set)"
+    end
                 
     spec.xcconfig = {
         'ENABLE_USER_SCRIPT_SANDBOXING' => 'NO',
