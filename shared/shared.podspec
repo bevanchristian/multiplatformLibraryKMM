@@ -1,15 +1,14 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'shared'
-    spec.version                  = '1.0'
+    spec.version                  = '1.1'
     spec.homepage                 = 'Link to the Shared Module homepage'
     spec.source                   = { :git=> 'https://github.com/bevanchristian/multiplatformLibraryKMM.git'}
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/shared.framework'
+    spec.vendored_frameworks      = 'build/cocoapods/framework/sharedBevanLib2.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '13.0'
-                
 
                 
     spec.xcconfig = {
@@ -18,7 +17,7 @@ Pod::Spec.new do |spec|
                 
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':shared',
-        'PRODUCT_MODULE_NAME' => 'shared',
+        'PRODUCT_MODULE_NAME' => 'sharedBevanLib2',
     }
                 
     spec.script_phases = [

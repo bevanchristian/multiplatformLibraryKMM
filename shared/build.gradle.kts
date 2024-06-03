@@ -29,10 +29,11 @@ kotlin {
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
-        version = "1.0"
+        version = "1.1"
         ios.deploymentTarget = "13.0"
+        source = "https://github.com/bevanchristian/multiplatformLibraryKMM.git"
         framework {
-            baseName = "shared"
+            baseName = "sharedBevanLib2"
             isStatic = true
         }
     }
